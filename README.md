@@ -10,3 +10,5 @@ cd ~/.vim
 git submodule update --init --recursive
 ln -s ~/.vim/vimrc ~/.vimrc
 ```
+
+Local changes go in ~/.vimrc.local
