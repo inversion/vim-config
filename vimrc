@@ -55,6 +55,12 @@ set statusline=%<%f\ %h%m%r%=%-20.(line=%l\ of\ %L,col=%c%V%)\%h%m%r%=%-40(,%n%Y
 " Automatically turn on colorizers highlighting for some filetypes
 let g:colorizer_auto_filetype='css,html,less,scss,vim'
 
+" Don't auto open quickfix window for pymode
+let g:pymode_lint_cwindow = 0
+" Disable PEP8 by default as it complains about a lot of minor formatting
+" issues
+let g:pymode_lint_checkers = ['pyflakes', 'mccabe']
+
 " ----------------------------------------------
 " Command Shortcuts
 " ----------------------------------------------
@@ -63,6 +69,18 @@ let g:colorizer_auto_filetype='css,html,less,scss,vim'
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>c :set nolist!<CR>
 
+" ,sw to strip whitespace off the ends
+nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
+
+" strip trailing whitespace<foo&bar>
+"autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
+function! StripTrailingWhitespace()
+    normal mz
+    normal Hmy
+    exec '%s/\s*$//g'
+    normal 'yz<cr>
+    normal `z
+endfunction
 
 " ----------------------------------------------
 " Source any local config
