@@ -60,14 +60,15 @@ let g:pymode_lint_cwindow = 0
 " Disable PEP8 by default as it complains about a lot of minor formatting
 " issues
 let g:pymode_lint_checkers = ['pyflakes', 'mccabe']
+let g:pymode_rope_complete_on_dot = 0
 
 " ----------------------------------------------
 " Command Shortcuts
 " ----------------------------------------------
 
 " ,c to show hidden characters
-set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>c :set nolist!<CR>
+"set listchars=tab:>-,trail:·,eol:$
+"nmap <silent> <leader>c :set nolist!<CR>
 
 " ,sw to strip whitespace off the ends
 nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
