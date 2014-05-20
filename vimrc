@@ -29,11 +29,6 @@ set guioptions-=m " no menu
 set guioptions+=LlRrb " Hack which adds all scrollbars so that they can be removed, line below breaks without this
 set guioptions-=LlRrb " Remove all scrollbars
 
-" Copy and paste
-:nmap <C-V> "+gP
-:imap <C-V> <ESC><C-V>i
-:vmap <C-C> "+y
-
 " Search options
 set hlsearch " highlight search matches...
 set incsearch " ...as you type
