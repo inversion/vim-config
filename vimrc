@@ -1,5 +1,3 @@
-" Lots of this stolen from https://github.com/kerryb/vim-config with a bunch of stuff I don't use removed and customisations
-
 set nocompatible
 filetype off
 call pathogen#infect()
@@ -38,17 +36,12 @@ set smartcase
 
 " Always use 'very magic' regex for search and substitution
 :nnoremap / /\v
-:cnoremap %s/ %s/\v
-:cnoremap s/ s/\v
 
 " Autosave all buffers when focus lost or buffer changes
 au FocusLost * :wa
 set autowriteall
 
 set statusline=%<%f\ %h%m%r%=%-20.(line=%l\ of\ %L,col=%c%V%)\%h%m%r%=%-40(,%n%Y%)\%P%#warningmsg#%{SyntasticStatuslineFlag()}%*
-
-" Automatically turn on colorizers highlighting for some filetypes
-let g:colorizer_auto_filetype='css,html,less,scss,vim'
 
 " Don't auto open quickfix window for pymode
 let g:pymode_lint_cwindow = 0
