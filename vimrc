@@ -30,11 +30,21 @@ set guioptions-=LlRrb " Remove all scrollbars
 " Search options
 set hlsearch " highlight search matches...
 set incsearch " ...as you type
-" When 'ignorecase' and 'smartcase' are both on, if a pattern contains an uppercase letter, it is case sensitive, otherwise, it is not. For example, /The would find only "The", while /the would find "the" or "The" etc. 
+" When 'ignorecase' and 'smartcase' are both on, if a pattern contains an uppercase letter, it is case sensitive, otherwise, it is not. For example, /The would find only "The", while /the would find "the" or "The" etc.
 set ignorecase
 set smartcase
 
-" Always use 'very magic' regex for search and substitution
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>
+vmap <C-C> "+y
+
+imap jk <esc>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" Always use 'very magic' regex for search
 :nnoremap / /\v
 
 " Autosave all buffers when focus lost or buffer changes
@@ -49,6 +59,10 @@ let g:pymode_lint_cwindow = 0
 " issues
 let g:pymode_lint_checkers = ['pyflakes', 'mccabe']
 let g:pymode_rope_complete_on_dot = 0
+
+let g:xml_syntax_folding = 1
+autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
+autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
 
 " ----------------------------------------------
 " Command Shortcuts
