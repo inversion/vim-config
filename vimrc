@@ -64,9 +64,15 @@ let g:xml_syntax_folding = 1
 autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
 autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
 
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
 " ----------------------------------------------
 " Command Shortcuts
 " ----------------------------------------------
+
+map <C-n> :NERDTreeToggle<CR>
 
 " ,c to show hidden characters
 "set listchars=tab:>-,trail:·,eol:$
