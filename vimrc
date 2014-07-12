@@ -67,6 +67,8 @@ autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
 
 " ----------------------------------------------
 " Command Shortcuts
