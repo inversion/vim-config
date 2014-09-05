@@ -34,10 +34,6 @@ set incsearch " ...as you type
 set ignorecase
 set smartcase
 
-nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>
-vmap <C-C> "+y
-
 imap jk <esc>
 noremap <Up> <NOP>
 noremap <Down> <NOP>
